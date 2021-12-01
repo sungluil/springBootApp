@@ -3,11 +3,14 @@
 
     <property name="DEV_HOME" value="logs" />
 
+    <!-- Appenders -->
     <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
-        <encoder>
-            <pattern> %d{yyyy-MM-dd HH:mm:ss.SSS} %highlight(%-5level) %magenta(%-4relative) --- [ %thread{10} ] %cyan(%logger{20}) : %msg%n </pattern>
+        <filter class="com.example.springbootapp.config.LogbackFilter"/>
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <pattern>%boldCyan(API) %boldYellow(%-5level) %green(%d{yyyy-MM-dd HH:mm:ss}) %boldMagenta([%logger{0}:%line]) %msg%n</pattern>
         </encoder>
     </appender>
+
 
     <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
         <file>${DEV_HOME}/debug.log</file>
@@ -20,8 +23,15 @@
         </rollingPolicy>
     </appender>
 
-    <logger name="org.springframework" level="info" />
-    <logger name="org.hibernate" level="debug" />
+<!--    <logger name="org.springframework" level="debug" />-->
+<!--    <logger name="org.hibernate" level="debug" />-->
+
+    <logger name="jdbc.sqlonly" level="off" />
+    <logger name="jdbc.sqltiming" level="debug" />
+    <logger name="jdbc.audit" level="off" />
+    <logger name="jdbc.resultset" level="off" />
+    <logger name="jdbc.resultsettable" level="debug" />
+    <logger name="jdbc.connection" level="off" />
 
     <root level="info">
         <appender-ref ref="STDOUT"/>

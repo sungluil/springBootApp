@@ -1,4 +1,4 @@
-package com.example.springbootapp.domain;
+package com.example.springbootapp.login.domain;
 
 import lombok.*;
 

@@ -1,6 +1,6 @@
-package com.example.springbootapp.dto;
+package com.example.springbootapp.login.dto;
 
-import com.example.springbootapp.domain.User;
+import com.example.springbootapp.login.domain.User;
 import lombok.Data;
 
 @Data

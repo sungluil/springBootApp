@@ -5,7 +5,7 @@
 
     <!-- Appenders -->
     <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
-        <filter class="com.example.springbootapp.commons.config.LogbackFilter"/>
+        <filter class="com.example.springbootapp.commons.filter.LogbackFilter"/>
         <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
             <pattern>%boldCyan(API) %boldYellow(%-5level) %green(%d{yyyy-MM-dd HH:mm:ss}) %boldMagenta([%logger{0}:%line]) %msg%n</pattern>
         </encoder>

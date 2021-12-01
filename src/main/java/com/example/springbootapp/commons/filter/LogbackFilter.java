@@ -1,4 +1,4 @@
-package com.example.springbootapp.commons.config;
+package com.example.springbootapp.commons.filter;
 
 import ch.qos.logback.classic.spi.ILoggingEvent;
 import ch.qos.logback.core.filter.Filter;

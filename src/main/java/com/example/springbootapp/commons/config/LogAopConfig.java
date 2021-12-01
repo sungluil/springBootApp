@@ -15,7 +15,8 @@ import java.lang.reflect.Method;
 @Slf4j
 public class LogAopConfig {
 
-    @Around("@annotation(com.example.springbootapp.commons.annotation.LogAspect)")
+//    @Around("@annotation(com.example.springbootapp.commons.annotation.LogAspect)")
+    @Around("bean(*Controller) || bean(*Service)")
     public Object logExecutionTime(ProceedingJoinPoint joinPoint) throws Throwable {
         Object[] args = joinPoint.getArgs();
         StopWatch stopWatch = new StopWatch();
@@ -41,6 +42,7 @@ public class LogAopConfig {
         stopWatch.stop();
         log.info("************************** AOP END **************************");
         log.info(stopWatch.prettyPrint());
+        log.info("toShortString          : {}", joinPoint.getSignature().toShortString());
         log.info("=================================================================");
 
 

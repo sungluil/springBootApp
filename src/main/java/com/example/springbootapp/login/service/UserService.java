@@ -1,9 +1,9 @@
-package com.example.springbootapp.service;
+package com.example.springbootapp.login.service;
 
 import com.example.springbootapp.commons.annotation.LogAspect;
-import com.example.springbootapp.domain.User;
-import com.example.springbootapp.dto.UserDTO;
-import com.example.springbootapp.repository.UserRepository;
+import com.example.springbootapp.login.domain.User;
+import com.example.springbootapp.login.dto.UserDTO;
+import com.example.springbootapp.login.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.modelmapper.ModelMapper;

@@ -1,5 +1,6 @@
 package com.example.springbootapp.controller;
 
+import com.example.springbootapp.commons.annotation.LogAspect;
 import com.example.springbootapp.dto.UserDTO;
 import com.example.springbootapp.service.UserService;
 import lombok.RequiredArgsConstructor;
@@ -18,6 +19,7 @@ public class LoginController {
     private final UserService userService;
 
     @PostMapping("/join")
+    @LogAspect
     public ResponseEntity join(@RequestBody UserDTO dto) {
         log.info("회원가입 데이터 {}", dto);
         UserDTO userDTO = userService.회원가입(dto);

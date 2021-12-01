@@ -10,7 +10,6 @@ public class UserDTO {
     private String email;
     private String pw;
 
-
     public User toEntity() {
         return User.builder()
                 .id(id)
